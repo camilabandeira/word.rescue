@@ -13,11 +13,11 @@ def clear_screen():
 
 def display_rules():
     rules = (
-        "[magenta]1.[/magenta] You will be given clues about a famous person from history.\n"
-        "[magenta]2.[/magenta] Based on the clues, you have to identify the person.\n"
-        "[magenta]3.[/magenta] You can ask for up to [magenta]3[/magenta] additional hints for each person.\n"
-        "[magenta]4.[/magenta] The game ends after [magenta]5[/magenta] rounds, and your score will be displayed.\n"
-        "[magenta]5.[/magenta] Have fun and learn new facts along the way!\n"
+        "[bold yellow]1.[/bold yellow] You will be given clues about a famous person from history.\n"
+        "[bold yellow]2.[/bold yellow] Based on the clues, you have to identify the person.\n"
+        "[bold yellow]3.[/bold yellow] You can ask for up to [bold yellow]3[/bold yellow] additional hints for each person.\n"
+        "[bold yellow]4.[/bold yellow] The game ends after [bold yellow]5[/bold yellow] rounds, and your score will be displayed.\n"
+        "[bold yellow]5.[/bold yellow] Have fun and learn new facts along the way!\n"
     )
     rules_text = Text.from_markup(rules, justify="left")
     rules_panel = Panel(rules_text, title="Game Rules", border_style="magenta", expand=False, padding=(1, 2))
