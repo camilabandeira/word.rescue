@@ -78,5 +78,18 @@ def main():
         clear_screen()
         display_rules()
 
+    level_prompt = Align("Please select the game level (easy, medium, hard):", align="center")
+    console.print(level_prompt)
+
+    game_level = ""
+    while game_level.lower() not in ["easy", "medium", "hard"]:
+        game_level = console.input(f"{' ' * ((console_width - len('Please select the game level (easy, medium, hard):')) // 2)}")
+        if game_level.lower() not in ["easy", "medium", "hard"]:
+            error_message = Text("Invalid input. Please enter 'easy', 'medium', or 'hard':", style="bold red")
+            aligned_error = Align(error_message, align="center")
+            console.print(aligned_error)
+
+    clear_screen()
+
 if __name__ == "__main__":
     main()
