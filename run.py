@@ -44,7 +44,10 @@ def main():
 
     clear_screen()
 
-    console.print(f"Welcome, {user_name}!", justify="center", style="bold")
+    welcome_text = f"Welcome, {user_name}!"
+    aligned_welcome = Align(welcome_text, align="center", style="bold")
+    padded_welcome = Padding(aligned_welcome, (2, 0))  # Add padding around the welcome message
+    console.print(padded_welcome)
 
 if __name__ == "__main__":
     main()
