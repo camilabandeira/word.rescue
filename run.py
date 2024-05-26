@@ -15,7 +15,7 @@ def main():
     clear_screen()
 
     BANNER = pyfiglet.figlet_format("Word Rescue", justify="center", font="doom")
-    padded_banner = Padding(BANNER, (1, 4))
+    padded_banner = Padding(BANNER, (0, 4))  # Reduced vertical padding to 0
     console.print(padded_banner)
 
     welcome_message = (
@@ -23,8 +23,8 @@ def main():
         "famous people from history based on intriguing clues about their lives and achievements. "
         "Perfect for history lovers, students, and trivia fans, this game lets you learn while you play."
     )
-    aligned_message = Align(welcome_message, align="center", style="#DAC3F8")
-    padded_message = Padding(aligned_message, (1, 2))
+    aligned_message = Align(welcome_message, align="center")
+    padded_message = Padding(aligned_message, (0, 2))  # Reduced vertical padding to 0
     console.print(padded_message)
 
     prompt_message = Align("Please enter your name:", align="center")
