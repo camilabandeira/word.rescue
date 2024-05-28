@@ -112,6 +112,15 @@ historical_figures = {
 }
 
 
+def reset_used_figures():
+    global used_figures
+    used_figures = {
+        "easy": [],
+        "medium": [],
+        "hard": []
+    }
+
+
 def main():
     clear_screen()
 
