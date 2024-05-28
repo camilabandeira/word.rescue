@@ -322,6 +322,8 @@ def main():
             console.print(aligned_error)
 
     clear_screen()
+    rounds = 4
+    score = 0
 
 
 if __name__ == "__main__":
