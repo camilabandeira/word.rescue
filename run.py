@@ -127,10 +127,18 @@ def get_random_figure(level):
         if fig not in used_figures[level]
     ]
     if not available_figures:
-        return None  
+        return None
     figure = random.choice(available_figures)
     used_figures[level].append(figure)
     return figure
+
+
+def display_word_progress(word, guessed_letters):
+    display = "".join([
+        letter if letter.lower() in guessed_letters else "_"
+        for letter in word
+    ])
+    return f"Word: {display}"
 
 
 def main():
