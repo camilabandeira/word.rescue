@@ -7,29 +7,30 @@ from rich.text import Text
 from rich.panel import Panel
 import random
 
+# Initialize the console for rich text display
 console = Console()
 
 
+# Function to clear the screen based on the OS
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
+# Function to display the game rules using rich text formatting
 def display_rules():
     rules = (
         "[bold yellow]1.[/bold yellow] You will be given "
-        "clues about a famous person"
-        "from history.\n"
+        "clues about a famous person from history.\n"
         "[bold yellow]2.[/bold yellow] Based on the clues, "
-        "you have to identify the"
-        "person.\n"
+        "you have to identify the person.\n"
         "[bold yellow]3.[/bold yellow] You can ask "
-        "for up to [bold yellow]3[/bold yellow]"
+        "for up to [bold yellow]3[/bold yellow] "
         "additional hints for each person.\n"
         "[bold yellow]4.[/bold yellow] The game ends "
-        "after [bold yellow]5[/bold yellow]"
-        "rounds, and your score will be displayed.\n"
-        "[bold yellow]5.[/bold yellow] Have fun and learn "
-        "new facts along the way!\n"
+        "after [bold yellow]5[/bold yellow] rounds, and your "
+        "score will be displayed.\n"
+        "[bold yellow]5.[/bold yellow] Have fun and "
+        "learn new facts along the way!\n"
     )
     rules_text = Text.from_markup(rules, justify="left")
     rules_panel = Panel(
@@ -43,6 +44,7 @@ def display_rules():
     console.print(aligned_rules)
 
 
+# Dictionary to hold historical figures categorized by difficulty level
 historical_figures = {
     "easy": [
         {"name": "Cleopatra", "clues": [
@@ -113,6 +115,7 @@ historical_figures = {
 }
 
 
+# Function to reset the used figures for a new game
 def reset_used_figures():
     global used_figures
     used_figures = {
@@ -122,6 +125,7 @@ def reset_used_figures():
     }
 
 
+# Get a random historical figure from the specified difficulty level
 def get_random_figure(level):
     available_figures = [
         fig for fig in historical_figures[level]
@@ -134,6 +138,7 @@ def get_random_figure(level):
     return figure
 
 
+# Function to display the current progress of the guessed word
 def display_word_progress(word, guessed_letters):
     display = "".join([
         letter if letter.lower() in guessed_letters else "_"
@@ -142,11 +147,13 @@ def display_word_progress(word, guessed_letters):
     return f"Word: {display}"
 
 
+# Function to display the letters that have already been guessed
 def display_guessed_letters(guessed_letters):
     guessed_display = ", ".join(sorted(guessed_letters)).upper()
     return f"[bold red]{guessed_display}[/bold red]"
 
 
+# Function to play a single round of the game
 def play_round(level, round_number):
     figure = get_random_figure(level)
     if figure is None:
@@ -168,7 +175,7 @@ def play_round(level, round_number):
             f"Attempts remaining: [green]{attempts}[/green]"
         )
         panel = Panel(panel_content, title=f"Round {round_number}",
-                      border_style="magenta")
+                      border_style="magenta", padding=(1, 2))
         aligned_panel = Align(panel, align="center")
         console.print(aligned_panel)
 
@@ -197,8 +204,7 @@ def play_round(level, round_number):
                 attempts -= 1
                 console.print(
                     Align(
-                        f"Incorrect guess. Attempts remaining: "
-                        f"[green]{attempts}[/green]",
+                        f"Incorrect guess.",
                         align="center", style="bold red"))
 
         if all(letter.lower() in guessed_letters
@@ -208,19 +214,31 @@ def play_round(level, round_number):
                       align="center", style="bold green"))
             return 1
 
-    console.print(
-        Align(f"Out of attempts. The answer was {figure['name']}.",
-              align="center", style="bold red"))
+    clear_screen()
+    final_panel_content = (
+        f"The answer was [bold green]{figure['name']}[/bold green].\n"
+    )
+    final_panel = Panel(
+        Align(final_panel_content, align="center"), title="Round Over",
+        border_style="magenta", padding=(1, 0)
+    )
+    padded_final_panel = Padding(final_panel, (1, 10))
+    console.print(Align(padded_final_panel, align="center"))
+
     return 0
 
 
+# Main function to start the game
 def main():
     clear_screen()
 
+    # Display game banner
     BANNER = pyfiglet.figlet_format("Word Rescue", font="doom")
     padded_banner = Padding(BANNER, (0, 4))
     aligned_banner = Align(padded_banner, align="center")
     console.print(aligned_banner)
+
+    # Display welcome message
     welcome_message = (
         "The fun and educational word game that challenges you to identify "
         "famous people from history based on intriguing clues about their "
@@ -231,6 +249,7 @@ def main():
     padded_message = Padding(aligned_message, (0, 2))
     console.print(padded_message)
 
+    # Prompt user to enter their name
     prompt_message = Align("Please enter your name:", align="center")
     console.print(prompt_message)
 
@@ -250,11 +269,13 @@ def main():
 
     clear_screen()
 
-    welcome_text = f"Welcome, {user_name}!"
+    # Welcome user by name
+    welcome_text = f"Welcome, [yellow]{user_name}[/yellow]!"
     aligned_welcome = Align(welcome_text, align="center", style="bold")
     padded_welcome = Padding(aligned_welcome, (2, 0))
     console.print(padded_welcome)
 
+    # Prompt user to see if they want to read the rules
     rules_prompt = Align(
         "Would you like to read the rules? (yes/no):", align="center"
     )
@@ -274,12 +295,15 @@ def main():
             aligned_error = Align(error_message, align="center")
             console.print(aligned_error)
 
+    clear_screen()
+
     if wants_rules.lower() == "yes":
-        clear_screen()
         display_rules()
 
+    # Prompt user to select game level
     level_prompt = Align(
-        "Please select the game level (easy, medium, hard):", align="center"
+        "Please select the game level ([bold]easy[/bold], [bold]medium[/bold],"
+        "[bold]hard[/bold]):", align="center"
     )
     console.print(level_prompt)
 
