@@ -147,6 +147,73 @@ def display_guessed_letters(guessed_letters):
     return f"[bold red]{guessed_display}[/bold red]"
 
 
+def play_round(level, round_number):
+    figure = get_random_figure(level)
+    if figure is None:
+        console.print(
+            Align("No more unique figures available for this level.",
+                  align="center", style="bold red"))
+        return 0
+    attempts = {"easy": 6, "medium": 4, "hard": 3}[level]
+    guessed_letters = set()
+
+    while attempts > 0:
+        word_progress = display_word_progress(figure['name'], guessed_letters)
+        guessed_display = display_guessed_letters(guessed_letters)
+
+        panel_content = (
+            f"[yellow]Clue:[/yellow] {figure['clues'][0]}\n\n"
+            f"{word_progress}\n\n"
+            f"Guessed letters: {guessed_display}\n\n"
+            f"Attempts remaining: [green]{attempts}[/green]"
+        )
+        panel = Panel(panel_content, title=f"Round {round_number}",
+                      border_style="magenta")
+        aligned_panel = Align(panel, align="center")
+        console.print(aligned_panel)
+
+        guess_prompt = "Guess a letter: "
+        console_width = console.size.width
+        padding = ' ' * ((console_width - len(guess_prompt)) // 2)
+        guess = console.input(f"{padding}{guess_prompt}").strip().lower()
+
+        clear_screen()
+
+        if not guess.isalpha() or len(guess) != 1:
+            console.print(
+                Align("Invalid input. Please guess a single letter.",
+                      align="center", style="bold red"))
+        elif guess in guessed_letters:
+            console.print(
+                Align("You already guessed that letter.",
+                      align="center", style="bold red"))
+        else:
+            guessed_letters.add(guess)
+            if guess in figure['name'].lower():
+                console.print(
+                    Align("Correct guess!", align="center",
+                          style="bold green"))
+            else:
+                attempts -= 1
+                console.print(
+                    Align(
+                        f"Incorrect guess. Attempts remaining: "
+                        f"[green]{attempts}[/green]",
+                        align="center", style="bold red"))
+
+        if all(letter.lower() in guessed_letters
+               for letter in figure['name'] if letter != " "):
+            console.print(
+                Align(f"Correct! The answer is {figure['name']}.",
+                      align="center", style="bold green"))
+            return 1
+
+    console.print(
+        Align(f"Out of attempts. The answer was {figure['name']}.",
+              align="center", style="bold red"))
+    return 0
+
+
 def main():
     clear_screen()
 
@@ -203,7 +270,8 @@ def main():
         )
         if wants_rules.lower() not in ["yes", "no"]:
             error_message = Text(
-                "Invalid input. Please enter 'yes' or 'no':", style="bold red"
+                "Invalid input. Please enter 'yes' or 'no':",
+                style="bold red"
             )
             aligned_error = Align(error_message, align="center")
             console.print(aligned_error)
