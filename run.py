@@ -121,6 +121,18 @@ def reset_used_figures():
     }
 
 
+def get_random_figure(level):
+    available_figures = [
+        fig for fig in historical_figures[level]
+        if fig not in used_figures[level]
+    ]
+    if not available_figures:
+        return None  
+    figure = random.choice(available_figures)
+    used_figures[level].append(figure)
+    return figure
+
+
 def main():
     clear_screen()
 
