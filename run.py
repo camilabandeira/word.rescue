@@ -142,6 +142,11 @@ def display_word_progress(word, guessed_letters):
     return f"Word: {display}"
 
 
+def display_guessed_letters(guessed_letters):
+    guessed_display = ", ".join(sorted(guessed_letters)).upper()
+    return f"[bold red]{guessed_display}[/bold red]"
+
+
 def main():
     clear_screen()
 
