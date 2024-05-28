@@ -349,5 +349,11 @@ final_score_text = (
 aligned_final_score = Align(final_score_text, align="center", style="bold")
 console.print(aligned_final_score)
 
+# Prompt user to see if they want to play again
+replay_prompt = Align(
+    "Would you like to play again? (yes/no):", align="center"
+)
+console.print(replay_prompt)
+
 if __name__ == "__main__":
     main()
