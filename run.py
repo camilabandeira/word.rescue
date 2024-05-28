@@ -322,10 +322,24 @@ def main():
             console.print(aligned_error)
 
     clear_screen()
+    # Rounds of the game
     rounds = 4
     score = 0
+    # Reset Figures
     reset_used_figures()
-    
+
+    for round_number in range(1, rounds + 1):
+        score += play_round(game_level, round_number)
+        if round_number < rounds:
+            next_round_prompt = Align(
+                "[bold italic]Press enter to the next round.[/bold italic]",
+                align="center"
+            )
+            console.print(next_round_prompt)
+            console.input()
+
+        clear_screen()
+
 
 if __name__ == "__main__":
     main()
