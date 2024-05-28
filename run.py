@@ -217,12 +217,10 @@ def play_round(level, round_number):
 def main():
     clear_screen()
 
-    BANNER = pyfiglet.figlet_format(
-        "Word Rescue", justify="center", font="doom"
-    )
+    BANNER = pyfiglet.figlet_format("Word Rescue", font="doom")
     padded_banner = Padding(BANNER, (0, 4))
-    console.print(padded_banner)
-
+    aligned_banner = Align(padded_banner, align="center")
+    console.print(aligned_banner)
     welcome_message = (
         "The fun and educational word game that challenges you to identify "
         "famous people from history based on intriguing clues about their "
