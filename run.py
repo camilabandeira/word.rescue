@@ -340,20 +340,43 @@ def main():
 
         clear_screen()
 
+    final_score_text = (
+        f"Your final score is [yellow]{score}[/yellow] out, "
+        f"of [yellow]{rounds}[/yellow]."
+    )
+    aligned_final_score = Align(final_score_text, align="center", style="bold")
+    console.print(aligned_final_score)
 
-# Display final score
-final_score_text = (
-    f"Your final score is [yellow]{score}[/yellow] out, "
-    f"of [yellow]{rounds}[/yellow]."
-)
-aligned_final_score = Align(final_score_text, align="center", style="bold")
-console.print(aligned_final_score)
+    # Prompt user to see if they want to play again
+    replay_prompt = Align(
+        "Would you like to play again? (yes/no):", align="center"
+    )
+    console.print(replay_prompt)
 
-# Prompt user to see if they want to play again
-replay_prompt = Align(
-    "Would you like to play again? (yes/no):", align="center"
-)
-console.print(replay_prompt)
+    play_again = ""
+    while play_again.lower() not in ["yes", "no"]:
+        play_again = console.input(
+            f"{' ' * ((console_width - len('Would you like to play again? '
+               '(yes/no):')) // 2)}"
+        )
+        if play_again.lower() not in ["yes", "no"]:
+            error_message = Text(
+                "Invalid input. Please enter 'yes' or 'no':",
+                style="bold red"
+            )
+            aligned_error = Align(error_message, align="center")
+            console.print(aligned_error)
+
+    if play_again.lower() == "yes":
+        clear_screen()
+        main()
+    else:
+        clear_screen()
+        goodbye_message = pyfiglet.figlet_format("Goodbye!", font="doom")
+        padded_goodbye = Padding(goodbye_message, (0, 4))
+        aligned_goodbye = Align(padded_goodbye, align="center")
+        console.print(aligned_goodbye)
+        
 
 if __name__ == "__main__":
     main()
