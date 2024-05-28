@@ -42,6 +42,76 @@ def display_rules():
     console.print(aligned_rules)
 
 
+historical_figures = {
+    "easy": [
+        {"name": "Cleopatra", "clues": [
+            "Queen of Egypt",
+            "Had relationships with Julius Caesar and Mark Antony",
+            "Known for her beauty and intelligence"
+        ]},
+        {"name": "Napoleon", "clues": [
+            "French military leader",
+            "Emperor of the French",
+            "Exiled to the island of Elba"
+        ]},
+        {"name": "Joan of Arc", "clues": [
+            "French heroine",
+            "Led the French army to victory",
+            "Burned at the stake"
+        ]},
+        {"name": "Leonardo da Vinci", "clues": [
+            "Italian polymath",
+            "Painted the Mona Lisa",
+            "Designed early flying machines"
+        ]}
+    ],
+    "medium": [
+        {"name": "Plato", "clues": [
+            "Classical Greek philosopher",
+            "Student of Socrates",
+            "Teacher of Aristotle"
+        ]},
+        {"name": "Shakespeare", "clues": [
+            "English playwright and poet",
+            "Wrote 'Hamlet' and 'Romeo and Juliet'",
+            "Born in Stratford-upon-Avon"
+        ]},
+        {"name": "Marie Curie", "clues": [
+            "Pioneering physicist and chemist",
+            "First woman to win a Nobel Prize",
+            "Discovered radium and polonium"
+        ]},
+        {"name": "Genghis Khan", "clues": [
+            "Founder of the Mongol Empire",
+            "United the Mongol tribes",
+            "Conquered large parts of Asia"
+        ]}
+    ],
+    "hard": [
+        {"name": "Aristotle", "clues": [
+            "Classical Greek philosopher",
+            "Student of Plato",
+            "Tutor of Alexander the Great"
+        ]},
+        {"name": "Homer", "clues": [
+            "Ancient Greek poet",
+            "Author of 'The Iliad' and 'The Odyssey'",
+            "Known for epic poetry"
+        ]},
+        {"name": "Nicolaus Copernicus", "clues": [
+            "Renaissance mathematician and astronomer",
+            "Formulated a model of the universe",
+            "Placed the Sun at the center of the universe"
+        ]},
+        {"name": "Immanuel Kant", "clues": [
+            "German philosopher",
+            "Wrote 'Critique of Pure Reason'",
+            "Major figure in modern philosophy"
+        ]}
+    ]
+}
+
+
 def main():
     clear_screen()
 
