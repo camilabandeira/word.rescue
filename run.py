@@ -324,7 +324,8 @@ def main():
     clear_screen()
     rounds = 4
     score = 0
-
+    reset_used_figures()
+    
 
 if __name__ == "__main__":
     main()
