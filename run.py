@@ -341,5 +341,13 @@ def main():
         clear_screen()
 
 
+# Display final score
+final_score_text = (
+    f"Your final score is [yellow]{score}[/yellow] out, "
+    f"of [yellow]{rounds}[/yellow]."
+)
+aligned_final_score = Align(final_score_text, align="center", style="bold")
+console.print(aligned_final_score)
+
 if __name__ == "__main__":
     main()
