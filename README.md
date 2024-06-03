@@ -1,8 +1,10 @@
-## Introduction
+# Introduction
 
 ### Word Rescue
 
 Introducing a fun and educational word game that challenges you to identify famous people from history based on intriguing clues about their lives and achievements. Perfect for history lovers, students, and trivia fans, this game lets you learn while you play. Developed as a project for Code Institute, it's designed to make learning history enjoyable and engaging. Test your knowledge and see how many historical figures you can recognize!
+
+# User Experience (UX)
 
 ### User Stories
 
@@ -42,5 +44,33 @@ I chose to use the pyfiglet library to create this logo. The pyfiglet library al
 <img width="642" alt="Flowchart" src="https://github.com/camilabandeira/word.rescue/assets/118302468/48f76bb0-98f4-48dd-a2a1-01e31388258e">
 
 I chose to use Lucidchart for creating the flowchart because it made it easy to visually map out the logical flow of the game. Its intuitive interface allowed me to quickly organize and present the game's structure in a clear manner, helping to ensure that all steps and decision points are easily understandable.
+
+
+# Features
+
+### Existing Features
+
+1. **Interactive Gameplay**: Players guess letters to identify historical figures based on given clues.
+2. **Multiple Difficulty Levels**: Choose from easy, medium, and hard levels to match your skill level.
+3. **Rich Text Formatting**: Engaging game interface using rich text formatting with the `rich` library.
+4. **Dynamic Hints**: Up to three additional hints available per person to help you guess the correct name.
+5. **Scoring System**: Track your score over 4 rounds of gameplay.
+6. **Replayability**: Option to play multiple rounds and improve your knowledge.
+
+### Terminal
+
+The game interface is built using the `rich` library, which enhances the visual appeal of the terminal. The terminal provides:
+
+<img width="642" alt="Terminal" src="https://github.com/camilabandeira/word.rescue/assets/118302468/9e291121-dc04-4201-a1de-2376997992d1">
+
+
+### Run Program Button
+
+The "Run Program" button allows users to easily restart the game. The button:
+
+- **Functionality**: Clicking the button reloads the program, resetting the game state and allowing users to start a new session.
+- **Design**: The button is styled with a bright yellow background and purple text to make it stand out and be easily identifiable. The border and rounded corners add to the button's visibility and user experience.
+
+<img width="260" alt="Button" src="https://github.com/camilabandeira/word.rescue/assets/118302468/f5c88098-0a71-4542-b588-2dc517ae7596">
 
 
