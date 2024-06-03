@@ -6,6 +6,32 @@ Introducing a fun and educational word game that challenges you to identify famo
 
 <h3 align="center"><a href="https://wordrescuepp3-b8f67715878a.herokuapp.com/">Live Demo</a></h3>
 
+# Table of Contents
+
+1. [Introduction](#introduction)
+   - [Word Rescue](#word-rescue)
+
+2. [User Experience (UX)](#user-experience-ux)
+   - [User Stories](#user-stories)
+   - [User Goals](#user-goals)
+   - [Color Scheme](#color-scheme)
+   - [Logo](#logo)
+   - [Flowchart](#flowchart)
+
+3. [Features](#features)
+   - [Existing Features](#existing-features)
+
+4. [Terminal](#terminal)
+
+5. [Run Program Button](#run-program-button)
+
+6. [Technologies](#technologies)
+   - [Languages](#languages)
+   - [Applications and Libraries](#applications-and-libraries)
+
+7. [Credits](#credits)
+
+
 # User Experience (UX)
 
 ### User Stories
