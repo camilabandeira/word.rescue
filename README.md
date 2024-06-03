@@ -93,3 +93,10 @@ In building Word Rescue, we harnessed a variety of technologies to ensure a fun,
 - **[Lucidchart](https://www.lucidchart.com/)**: I used this for creating the flowchart, mapping out the game's logic clearly and simply.
 - **[Pyfiglet](https://github.com/pwaller/pyfiglet)**: This Python library helped me create awesome ASCII art for the game logo.
 - **[Rich](https://rich.readthedocs.io/en/stable/)**: Another Python library that made the terminal output look fantastic with styled text and panels.
+
+# Credits
+
+- **[MDN Web Docs](https://developer.mozilla.org/)**: For comprehensive documentation on HTML, CSS, and JavaScript.
+- **[Python.org](https://www.python.org/)**: For extensive resources and documentation on Python.
+- **[GitHub Repositories](https://github.com/)**: For various code snippets and open-source projects that inspired and guided the development process.
+- **[YouTube](https://www.youtube.com/)**: For tutorials that helped me learn and implement new features.
