@@ -4,6 +4,8 @@
 
 Introducing a fun and educational word game that challenges you to identify famous people from history based on intriguing clues about their lives and achievements. Perfect for history lovers, students, and trivia fans, this game lets you learn while you play. Developed as a project for Code Institute, it's designed to make learning history enjoyable and engaging. Test your knowledge and see how many historical figures you can recognize!
 
+<h3 align="center"><a href="https://wordrescuepp3-b8f67715878a.herokuapp.com/">Live Demo</a></h3>
+
 # User Experience (UX)
 
 ### User Stories
