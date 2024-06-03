@@ -73,4 +73,23 @@ The "Run Program" button allows users to easily restart the game. The button:
 
 <img width="260" alt="Button" src="https://github.com/camilabandeira/word.rescue/assets/118302468/f5c88098-0a71-4542-b588-2dc517ae7596">
 
+# Technologies
 
+In building Word Rescue, we harnessed a variety of technologies to ensure a fun, educational, and seamless experience. Here’s a closer look at what we used:
+
+### Languages
+
+- **[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)**: For the basic structure of the web pages.
+- **[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)**: To add style and make the pages look great.
+- **[Python](https://www.python.org/)**: The backbone of the game logic, handling everything behind the scenes.
+- **[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)**: To manage the terminal interface and make everything interactive.
+
+### Applications and Libraries
+
+- **[Git](https://git-scm.com/)**: version control system, helping me track changes and collaborate smoothly.
+- **[VSCode](https://code.visualstudio.com/)**: The code editor I used to write and manage all the code.
+- **[GitHub](https://github.com/)**: Where the project's repository lives, making it easy to share and collaborate.
+- **[Heroku](https://www.heroku.com/)**: The platform I used to deploy the game online, so everyone can play it.
+- **[Lucidchart](https://www.lucidchart.com/)**: I used this for creating the flowchart, mapping out the game's logic clearly and simply.
+- **[Pyfiglet](https://github.com/pwaller/pyfiglet)**: This Python library helped me create awesome ASCII art for the game logo.
+- **[Rich](https://rich.readthedocs.io/en/stable/)**: Another Python library that made the terminal output look fantastic with styled text and panels.
